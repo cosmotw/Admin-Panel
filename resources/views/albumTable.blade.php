@@ -29,7 +29,7 @@
             columnDefs: [
                 {
                     render: function(data, type, row) {
-                        return '<a href="/album/' + row[0] + '/edit">' + data + '</a>';
+                        return '<a href="/projects/album/' + row[0] + '/edit">' + data + '</a>';
                     },
                     targets: 1
                 },
@@ -43,7 +43,7 @@
                     orderable: false,
                     render: function(data, type, row) {
                         let html = '';
-                        html += '<a href="/album/' + row[0] + '/edit"><button type="button" class="btn btn-sm btn-info">編輯</button></a>';
+                        html += '<a href="/projects/album/' + row[0] + '/edit"><button type="button" class="btn btn-sm btn-info">編輯</button></a>';
                         html += '<button type="button" class="btn btn-sm btn-danger btn-del" data-del="' + row[0] + '" data-toggle="modal" data-target=".bs-example-modal-sm">刪除</button>';
                         return html;
                     },

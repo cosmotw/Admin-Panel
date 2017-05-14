@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Album;
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePhotoPost;
 
 class AlbumController extends Controller
 {
@@ -62,16 +63,16 @@ class AlbumController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Album  $album
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Album $album)
+    public function edit(int $id)
     {
-        $album = $album->find($id);
+        $album = Album::find($id);
         $outputData = [
-            'putURL' => url('album/' . $album->id),
+            'putURL' => url('projects/album/' . $album->id),
             'photoTitle' => $album->title,
-            'photoImage' => $album->photo_url,
+            'photoURL' => $album->photo_url,
             'photoDesc' => $album->description,
             'photoCategory' => $album->category,
             'created_at' => $album->created_at
@@ -87,9 +88,16 @@ class AlbumController extends Controller
      * @param  \App\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Album $album)
+    public function update(StorePhotoPost $request, int $id)
     {
-        //
+        $inputData = $request->only(['photoTitle', 'photoURL', 'photoDesc']);
+        $result = Album::where('id', $id)->update([
+            'title' => $inputData['photoTitle'],
+            'photo_url' => $inputData['photoURL'],
+            'description' => $inputData['photoDesc']
+        ]);
+
+        return redirect('projects/album');
     }
 
     /**
