@@ -47,7 +47,7 @@
                         html += '<button type="button" class="btn btn-sm btn-danger btn-del" data-del="' + row[0] + '" data-toggle="modal" data-target=".bs-example-modal-sm">刪除</button>';
                         return html;
                     },
-                    targets: 5
+                    targets: 7
                 }
             ]
         });
@@ -97,8 +97,9 @@
                                 <th>圖片</th>
                                 <th>描述</th>
                                 <th>分類</th>
-                                <th>操作</th>
                                 <th>建立時間</th>
+                                <th>更新時間</th>
+                                <th>操作</th>
                             </tr>
                         </thead>
                     </table>

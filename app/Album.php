@@ -17,6 +17,7 @@ class Album extends Model
         $orderBy = $params['order']['dir'];
 
         $albums = self::where('title', 'like', '%' . (!empty($params['search']['value']) ? $params['search']['value'] : '') . '%')
+                ->orWhere('description', 'like', '%' . (!empty($params['search']['value']) ? $params['search']['value'] : '') . '%')
                 ->select($params['selectFields'])
                 ->skip($params['start'])
                 ->take($params['length'])
