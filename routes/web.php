@@ -13,6 +13,10 @@
 
 Auth::routes();
 
+/** Basic **/
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/logout', 'Auth\LoginController@logout');
+
+/** Album Project Management **/
+Route::resource('/projects/album', 'AlbumController');

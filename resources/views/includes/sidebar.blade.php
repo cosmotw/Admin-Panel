@@ -25,7 +25,7 @@
                     <li>
                         <a><i class="fa fa-group"></i> 個人專案管理 <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">相簿</a></li>
+                            <li><a href="/projects/album">相簿</a></li>
                         </ul>
                     </li>
                 </ul>

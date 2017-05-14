@@ -44,12 +44,6 @@
             <!-- /footer content -->
         </div>
     </div>
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
 
     <!-- Bootstrap Scripts -->
      <script src="{{ asset("js/bootstrap.js") }}"></script>
@@ -58,8 +52,5 @@
 
     <!-- Gentelella Theme Scripts -->
     <script src="{{ asset("js/gentelella.min.js") }}"></script>
-
-    <!-- Custom Scripts -->
-    <script src="{{ asset("js/custom.min.js") }}"></script>
 </body>
 </html>
