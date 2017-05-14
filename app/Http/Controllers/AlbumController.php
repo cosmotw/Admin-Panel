@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Album;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePhotoPost;
+use Carbon\Carbon;
 
 class AlbumController extends Controller
 {
@@ -35,7 +36,7 @@ class AlbumController extends Controller
      */
     public function create()
     {
-        //
+        return view('createPhoto');
     }
 
     /**
@@ -46,7 +47,16 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inputData = $request->only(['photoTitle', 'photoURL', 'photoDesc']);
+        $result = Album::insert([
+            'title' => $inputData['photoTitle'],
+            'photo_url' => $inputData['photoURL'],
+            'description' => $inputData['photoDesc'],
+            'category' => 1,
+            'created_at' => Carbon::now()
+        ]);
+
+        return redirect('projects/album');
     }
 
     /**
@@ -94,7 +104,8 @@ class AlbumController extends Controller
         $result = Album::where('id', $id)->update([
             'title' => $inputData['photoTitle'],
             'photo_url' => $inputData['photoURL'],
-            'description' => $inputData['photoDesc']
+            'description' => $inputData['photoDesc'],
+            'updated_at' => Carbon::now()
         ]);
 
         return redirect('projects/album');

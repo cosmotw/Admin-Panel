@@ -99,6 +99,6 @@ class AlbumAPIController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Album::destroy($id);
     }
 }
