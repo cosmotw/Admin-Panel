@@ -7,17 +7,16 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class LoginTest extends TestCase
 {
     /**
-     * A basic test example.
+     * Test login error messagebag.
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testLoginError()
     {
-        $response = $this->get('/login');
-
-        $response->assertStatus(200);
+        $response = $this->post('/login', ['email' => 'guest@guest.com']);
+        $response->assertSessionHasErrors(['password']);
     }
 }
