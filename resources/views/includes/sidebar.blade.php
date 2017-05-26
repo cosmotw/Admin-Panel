@@ -25,7 +25,7 @@
                     <li>
                         <a><i class="fa fa-group"></i> 個人專案管理 <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="/projects/album">相簿</a></li>
+                            <li><a href="{{ route('album.index') }}">相簿</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -42,7 +42,7 @@
             <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ url('/logout') }}">
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('logout') }}">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
         </div>

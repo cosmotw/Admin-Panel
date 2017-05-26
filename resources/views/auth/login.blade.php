@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('login_content')
-<form method="post" action="{{ url('/login') }}">
+<form method="post" action="{{ route('login') }}">
     {{ csrf_field() }}
 
     <h1>Login Form</h1>

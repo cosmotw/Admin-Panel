@@ -139,7 +139,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_content">
-                    <form class="form-horizontal form-label-left" method="POST" action="{{ $putURL or url('projects/album') }}" novalidate>
+                    <form class="form-horizontal form-label-left" method="POST" action="{{ $putURL or route('album.store') }}" novalidate>
 @if (!empty($putURL))
                         {{ method_field('PUT') }}
 @endif
@@ -187,7 +187,7 @@
                         <div class="ln_solid"></div>
 
                         <div class="col-md-2 col-sm-2 col-xs-12 col-md-offset-10">
-                            <a href="{{ url('/projects/album') }}"><button type="button" class="btn btn-primary">回列表</button></a>
+                            <a href="{{ route('album.index') }}"><button type="button" class="btn btn-primary">回列表</button></a>
                             <button type="submit" class="btn btn-success">發佈</button>
                         </div>
                     </form>

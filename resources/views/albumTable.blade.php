@@ -87,7 +87,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_content">
-                    <a href="/projects/album/create"><button type="button" class="btn btn-success">新增</button></a>
+                    <a href="{{ route('album.create') }}"><button type="button" class="btn btn-success">新增</button></a>
                     <hr>
                     <table class="table table-striped table-bordered dt-responsive nowrap datatable" cellspacing="0">
                         <thead>

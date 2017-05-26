@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('login_content')
-<form method="post" action="{{ url('/register') }}">
+<form method="post" action="{{ route('register') }}">
     {{ csrf_field() }}
 
     <h1>Create Account</h1>
@@ -56,7 +56,7 @@
     
     <div class="separator">
         <p class="change_link">Already a member ?
-            <a href="{{ url('/login') }}" class="to_register"> Log in </a>
+            <a href="{{ route('login') }}" class="to_register"> Log in </a>
         </p>
         
         <div class="clearfix"></div>
