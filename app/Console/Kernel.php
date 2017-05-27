@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\Commands\WelcomeNewUsers::class
+        \App\Console\Commands\WelcomeNewUsers::class,
+        \App\Console\Commands\ResetPassword::class
     ];
 
     /**

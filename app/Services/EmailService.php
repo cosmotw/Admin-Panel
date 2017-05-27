@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use \App\User;
 use Illuminate\Mail\Mailer;
+use Illuminate\Support\Facades\Password;
 
 class EmailService
 {
@@ -14,17 +14,19 @@ class EmailService
         $this->mail = $mail;
     }
 
-    public function WelcomeNewUsers()
+    public function welcomeNewUsers($user)
     {
-        $user = new User;
-        $user->signedUpThisWeek()->each(function ($user) {
-            $this->mail->send(
-                'emails.welcome',
-                ['name' => $user->name],
-                function ($m) use ($user) {
-                    $m->to($user->email)->subject('Welcome');
-                }
-            );
-        });
+        $this->mail->send(
+            'emails.welcome',
+            ['name' => $user->name],
+            function ($m) use ($user) {
+                $m->to($user->email)->subject('Welcome');
+            }
+        );
+    }
+
+    public function resetPassword($email)
+    {
+        Password::broker()->sendResetLink(['email' => $email]);
     }
 }
