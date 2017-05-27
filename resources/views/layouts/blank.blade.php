@@ -11,7 +11,7 @@
 
     <title>Admin</title>
 
-    <!-- Bootstrap、Font awesome、Gentelella -->
+    <!-- Bootstrap, Font awesome, Gentelella -->
     <link href="{{ mix("css/auth-layout.css") }}" rel="stylesheet">
 
     @stack('stylesheets')

@@ -19,7 +19,7 @@ if (mix.config.inProduction) {
 /* Copy Stylesheets */
 /********************/
 
-// Bootstrap、Font awesome、Gentelella
+// Bootstrap, Font awesome, Gentelella
 mix.styles([
     'node_modules/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css',
     'node_modules/gentelella/vendors/font-awesome/css/font-awesome.min.css',

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+    * Get sign up users this week.
+    *
+    * @return object
+    */
+    public function signedUpThisWeek()
+    {
+        return $this->whereBetween('created_at', [Carbon::now()->subWeek(), Carbon::now()])->get();
+    }
 }
