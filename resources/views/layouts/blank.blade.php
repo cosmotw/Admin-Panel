@@ -40,7 +40,7 @@
     </div>
 
     <!-- Bootstrap Scripts -->
-     <script src="{{ asset("js/bootstrap.js") }}"></script>
+     <script src="{{ mix("js/bootstrap.js") }}"></script>
 
     @stack('scripts')
 

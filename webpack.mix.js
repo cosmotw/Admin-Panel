@@ -11,6 +11,10 @@ const { mix } = require('laravel-mix');
  |
  */
 
+if (mix.config.inProduction) {
+    mix.version();
+}
+
 /********************/
 /* Copy Stylesheets */
 /********************/
@@ -20,7 +24,7 @@ mix.styles([
     'node_modules/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css',
     'node_modules/gentelella/vendors/font-awesome/css/font-awesome.min.css',
     'node_modules/gentelella/build/css/custom.min.css'
-], 'public/css/auth-layout.css').version();
+], 'public/css/auth-layout.css');
 
 // Datatables
 mix.copy('node_modules/gentelella/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css', 'public/css');
