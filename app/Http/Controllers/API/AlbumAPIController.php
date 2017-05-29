@@ -21,7 +21,7 @@ class AlbumAPIController extends Controller
             'length' => $request->input('length'),
             'order' => $request->input('order')[0],
             'search' => $request->input('search'),
-            'selectFields' => ['id', 'title', 'photo_url', 'description', 'category', 'created_at', 'updated_at']
+            'selectFields' => ['id', 'title', 'photo_url', 'description', 'category_id', 'created_at', 'updated_at']
         ];
 
         $dataList = $album->getDataList($inputParams);
