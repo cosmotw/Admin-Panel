@@ -14,7 +14,7 @@ class AlbumAPIController extends Controller
      * @param  \App\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Album $album)
+    public function index(Request $request)
     {
         $inputParams = [
             'start' => $request->input('start'),
@@ -24,7 +24,7 @@ class AlbumAPIController extends Controller
             'selectFields' => ['id', 'title', 'photo_url', 'description', 'category_id', 'created_at', 'updated_at']
         ];
 
-        $dataList = $album->getDataList($inputParams);
+        $dataList = Album::dataList($inputParams);
 
         return response()
                 ->json([

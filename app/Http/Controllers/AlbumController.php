@@ -78,7 +78,7 @@ class AlbumController extends Controller
      */
     public function edit(int $id)
     {
-        $album = Album::find($id);
+        $album = Album::findOrFail($id);
         $outputData = [
             'putURL' => url('projects/album/' . $album->id),
             'photoTitle' => $album->title,
